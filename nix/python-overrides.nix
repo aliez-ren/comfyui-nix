@@ -40,9 +40,12 @@ let
       cuda_cupti # libcupti.so.12
       libcublas # libcublas.so.12, libcublasLt.so.12
       libcufft # libcufft.so.11
+      libcufile # libcufile.so.0 (GPUDirect Storage)
       libcurand # libcurand.so.10
       libcusolver # libcusolver.so.11
       libcusparse # libcusparse.so.12
+      libcusparse_lt # libcusparseLt.so.0
+      libnvshmem # libnvshmem_host.so.3
       cudnn # libcudnn.so.9
       nccl # libnccl.so.2
       cuda_nvrtc # libnvrtc.so.12
