@@ -12,8 +12,8 @@ let
 
   # Pre-built PyTorch CUDA wheels from pytorch.org
   # These avoid compiling PyTorch from source (which requires 30-60GB RAM and hours of build time)
-  # The wheels bundle CUDA 12.4 libraries, so no separate CUDA toolkit needed at runtime
-  cudaWheels = versions.pytorchWheels.cu124;
+  # The wheels bundle CUDA 12.8 libraries, so no separate CUDA toolkit needed at runtime
+  cudaWheels = versions.pytorchWheels.cu128;
 
   # Pre-built PyTorch ROCm wheels from pytorch.org
   # These avoid compiling PyTorch from source (which requires 30-60GB RAM and hours of build time)
@@ -106,7 +106,7 @@ lib.optionalAttrs useCuda {
     doCheck = false;
 
     # Passthru attributes expected by downstream packages (xformers, bitsandbytes, etc.)
-    # The wheel bundles CUDA 12.4 and supports all GPU architectures
+    # The wheel bundles CUDA 12.8 and supports all GPU architectures
     passthru = {
       cudaSupport = true;
       rocmSupport = false;

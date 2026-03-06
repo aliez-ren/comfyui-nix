@@ -62,7 +62,7 @@ CUDA builds are available for Linux with NVIDIA GPUs. The `#cuda` package uses p
 - **Fast builds**: Downloads ~2GB of pre-built wheels instead of compiling for hours
 - **Low memory**: No 30-60GB RAM requirement for compilation
 - **All architectures**: Supports Pascal (GTX 1080) through Hopper (H100) in one package
-- **Bundled runtime**: CUDA 12.4 libraries included in wheels (no separate toolkit needed)
+- **Bundled runtime**: CUDA 12.8 libraries included in wheels (no separate toolkit needed)
 
 ```bash
 nix run github:utensils/comfyui-nix#cuda
