@@ -601,6 +601,13 @@ lib.optionalAttrs useCuda {
   });
 }
 
+# Disable failing accelerate test (torch inductor FileNotFoundError in Nix sandbox)
+// lib.optionalAttrs (prev ? accelerate) {
+  accelerate = prev.accelerate.overridePythonAttrs (old: {
+    disabledTests = (old.disabledTests or [ ]) ++ [ "test_convert_to_fp32" ];
+  });
+}
+
 # Disable failing timm test (torch dynamo/inductor test needs setuptools at runtime)
 // lib.optionalAttrs (prev ? timm) {
   timm = prev.timm.overridePythonAttrs (old: {
